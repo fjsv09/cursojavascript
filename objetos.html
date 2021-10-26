@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objetos</title>
+</head>
+<body>
+    <h1>Objetos</h1>
+
+    <script>
+
+        const b = {};
+        console.log(b);
+
+        const fer = {
+            nombre: "Fernando",
+            apellido: "Vilcherres",
+            pasatiempo: ["Correr", "Dormir"],
+            soltero: true,
+            conctacto: {
+                email: "fer@gmail.com",
+                movil: "123456789"
+            },
+            saludar: function (){
+                console.log("Hola :V");
+            },
+            decirMiNombre: function (){
+                console.log(`Hola me llamo ${this.nombre}`)
+            }
+        }
+        
+        console.log(fer);
+        console.log(fer["nombre"]);
+        console.log(fer.apellido);        
+        console.log(fer.pasatiempo);
+        console.log(fer.conctacto);
+        console.log(fer.conctacto.email);
+        fer.saludar();
+        fer.decirMiNombre();
+
+        console.log(Object.keys(fer));
+        console.log(Object.values(fer));
+        console.log(fer.hasOwnProperty("nombre"));
+
+
+    </script>
+</body>
+</html>
