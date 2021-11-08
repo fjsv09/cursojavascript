@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prototipo</title>
+</head>
+<body>
+    <h1>Prototipo</h1>
+
+    <script>
+
+        //Funcion construtora donde asignamos metodos al prototipo, no a la función como tal
+        function Animal(nombre, genero) {
+            this.nombre = nombre;
+            this.genero = genero;
+        }
+
+        //Metodos agregados al prototipo de la función construtora
+        Animal.prototype.sonar = function () {
+            console.log("Sonido");
+        }
+
+        Animal.prototype.saludar = function () {
+            console.log(`Me llamo: ${this.nombre}`);
+        }
+
+        const snoopy = new Animal("Snoopy", "Macho"),
+        lolaBunny = new Animal("Lola Bunny", "Hembra");
+        
+        console.log(snoopy);
+        console.log(lolaBunny);
+
+        snoopy.sonar();
+        snoopy.saludar();
+
+    </script>
+
+</body>
+</html>
