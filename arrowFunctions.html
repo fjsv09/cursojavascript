@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow Functions</title>
+</head>
+<body>
+    <h1>Arrow Functions</h1>
+
+    <script>
+
+        //Función declarada
+        function funDeclarada() {
+            console.log("Funcion de clarada y puedo llamarla antes que fue declarada");
+        }
+
+        //Función expresada - anonima
+        const funExpresada = function () {
+            console.log("Función expresada y solo puede llamarse una vez que ha sido declarada");
+        }
+
+        //Arrow Functions
+        const saludar = () => {
+            console.log("HOLA!!!");            
+        }
+
+        const saludar2 = () => console.log("HOLA!!!");
+        
+        const saludar3 = (nombre) => console.log(`HOLA ${nombre}!!!`);
+
+        saludar();
+        saludar3("Fernando");
+
+        const numeros = [1, 2, 3, 4, 5];
+        numeros.forEach((el, index) => {
+            console.log(`${el} en la posición ${index}`); 
+        });
+
+        function perro() {
+            console.log(this);
+        }
+
+        perro();
+
+        const perro2 = {
+            nombre: "Bobi",
+            edad: 12,
+            ladrar: function () {
+                console.log(this);
+            }
+        }
+
+        perro2.ladrar();
+
+        const perro3 = {
+            nombre: "Bobi",
+            edad: 12,
+            ladrar: () => {
+                console.log(this);
+            }
+        }
+
+        perro3.ladrar();
+
+
+    </script>
+</body>
+</html>
