@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Herencia prototipica</title>
+</head>
+<body>
+    <h1>Herencia prototipica</h1>
+
+    <script>
+
+        //Funcion construtora donde asignamos metodos al prototipo, no a la función como tal
+        function Animal(nombre, genero) {
+            this.nombre = nombre;
+            this.genero = genero;
+        }
+
+        //Metodos agregados al prototipo de la función construtora
+        Animal.prototype.sonar = function () {
+            console.log("Sonido");
+        }
+
+        Animal.prototype.saludar = function () {
+            console.log(`Me llamo: ${this.nombre}`);
+        }
+
+        //Herencia prototípica
+        function Perro(nombre, genero, tamanio) {
+            this.super = Animal;
+            this.super(nombre, genero);
+            this.tamanio = tamanio;
+        }
+
+        //Perro está heredando de animal
+        Perro.prototype = new Animal();
+        Perro.prototype.construtor = Perro;
+
+        //Sobreescritura de métodos del prototipo padre en el hijo
+        Perro.prototype.sonar = function () {
+            console.log("Soy un perro y sonido es un ladrido");            
+        }
+
+        Perro.prototype.ladrar = function () {
+            console.log("guauuuu guauuu !!!!");
+        }
+
+    
+        const snoopy = new Perro("Snoopy", "Macho", "Mediano"),
+        lolaBunny = new Animal("Lola Bunny", "Hembra");
+        
+        console.log(snoopy);
+        console.log(lolaBunny);
+
+        snoopy.sonar();
+        snoopy.saludar();
+        snoopy.ladrar();
+
+        lolaBunny.sonar();
+        lolaBunny.saludar();
+
+    </script>
+</body>
+</html>
