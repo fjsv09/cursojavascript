@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objeto console</title>
+</head>
+<body>
+    <h1>Objeto console</h1>
+
+    <script>
+
+        console.log(console);
+        console.error("Esto es un error");
+        console.warn("Esto es una aviso");
+        console.info("Esto es un mensaje informativo");
+        console.log("regsitro de lo que ha pasado en nuestra aplicación");
+
+        let nombre = "FJSV",
+        apellido = "Vilcherres",
+        edad = 22;
+        
+        console.log(nombre, apellido, edad);
+        console.log(`mi nombres es ${nombre} ${apellido} y tengo ${edad} años`);
+        console.log(`mi nombres es %s %s y tengo %d años`, nombre, apellido, edad);
+        console.clear();
+        
+        console.log(window);
+        console.log(document);
+        console.dir(window);
+        console.dir(document);
+        console.clear();
+        
+        console.group("Cursos de FJSV");
+        console.log("Video 1");
+        console.log("Video 2");
+        console.groupEnd();
+
+        console.groupCollapsed("Cursos de FJSV");
+        console.log("Video 1");
+        console.log("Video 2");
+        console.groupEnd();
+        console.clear();
+        
+        console.log(console);
+        console.table(Object.entries(console).sort());
+        
+        const numeros = [1, 2, 3, 4, 5],
+        vocales = ["a", "e", "i", "o", "u"];
+        
+        console.table(numeros);
+        console.table(vocales);
+        
+        const perro = {
+            nombre: "Boby",
+            raza: "Unica",
+            color: "negro"
+        }
+        console.table(perro);
+        console.clear();
+        
+        console.time("TI");
+        const arreglo = Array(100);
+        
+        for (let i = 0; i < arreglo.length; i++) {
+            arreglo[i] = i;
+            
+        }
+        console.timeEnd("TI");
+        console.log(arreglo);
+        console.clear();
+        
+        for (let i = 0; i < 100; i++) {
+            console.count("Codigo for");
+            console.log(i);            
+        }
+        console.clear();
+
+        let x = 5,
+        y = 4,
+        pruebaXY = "Se espera que x sea menor que y";
+
+        console.assert(x < y, {x, y, pruebaXY});
+
+
+
+        
+
+    </script>
+</body>
+</html>
