@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expresiones regulares</title>
+</head>
+<body>
+    <h1>Expresiones regulares</h1>
+
+    <script>
+
+        let cadena = "loren asadsd Loren 123456";
+
+        // let expReg = new RegExp("loren", "ig");
+        // console.log(expReg.test(cadena));
+        // console.log(expReg.exec(cadena));
+        
+        let expReg2 = /loren{1,}/ig
+        console.log(expReg2.test(cadena));
+        console.log(expReg2.exec(cadena));
+
+    </script>
+</body>
+</html>
