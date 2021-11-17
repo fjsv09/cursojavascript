@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funciones anominas autoejecutables</title>
+</head>
+<body>
+    <h1>Funciones anominas autoejecutables</h1>
+
+    <script>
+
+        (function () {
+            console.log("Mi primer IIFE");
+        })();
+
+        (function (d, w, c) {
+            console.log("Mi segundo IIFE");
+            console.log(d);
+            console.log(w);
+            c.log(c);
+        })(document, window, console);
+
+        //Clásica
+        (function () {
+            console.log("Versión clásica");
+        })();
+
+        //La Crockford
+        ((function () {
+            console.log("Versión Crockford");
+        })());
+
+        //Unitaria
+        +function () {
+            console.log("Versión Unitaria");
+        }();
+        
+        //Facebook
+        !function () {
+            console.log("Versión Facebook");
+        }();
+    </script>
+</body>
+</html>
