@@ -21,7 +21,7 @@
             console.log("Ejecutando un setInterval, esto se ejecuta indefinadamente cada cierto tiempo"); 
         }, 1000);*/
 
-        let temporizador1 = setTimeout(() => {
+        /*let temporizador1 = setTimeout(() => {
             console.log("Ejecutando un setTimeout, esto se ejecuta una sóla vez"); 
         }, 1000);
 
@@ -34,7 +34,7 @@
         }, 1000);
 
         clearInterval(temporizador2);
-        console.log("Despues de clearInterval");
+        console.log("Despues de clearInterval");*/
 
         /*
         Procesamiento Single thread y Multi thread.
@@ -46,7 +46,7 @@
 
 
         /*Codígo Sincrono Bloqueante*/
-        (() => {
+        /*(() => {
             console.log("Código Síncrono");
             console.log("Inicio");
 
@@ -64,10 +64,10 @@
             uno();
             console.log("Fin");
         })();
-        console.clear();
+        console.clear();*/
         
         /*Codígo Asíncrono No Bloqueante*/
-        (() => {
+        /*(() => {
             console.log("Código Asíncrono");
             console.log("Inicio");
 
@@ -87,9 +87,32 @@
 
             uno();
             console.log("Fin");
-        })();
+        })();*/
 
-        
+        function cuadardoCallback(value, callback) {
+            setTimeout(() => {
+                callback(value, value * value);
+            }, 0 | Math.random()*1000);
+        }
+
+        cuadardoCallback(0, (value, result) => {
+            console.log("Inicio callback");
+            console.log(`Callback: ${value}, ${result}`);
+            cuadardoCallback(1, (value, result) => {
+                console.log("Inicio callback");
+                console.log(`Callback: ${value}, ${result}`);
+                cuadardoCallback(2, (value, result) => {
+                    console.log("Inicio callback");
+                    console.log(`Callback: ${value}, ${result}`);
+                    console.log("Fin callback");
+                    console.log("Callback Hell!!!!!");
+
+                });
+            });
+        });
+
+
+
     </script>
 </body>
 </html>
