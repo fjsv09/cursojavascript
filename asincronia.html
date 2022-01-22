@@ -11,7 +11,7 @@
 
     <script>
     
-        console.log("Inicio")
+        // console.log("Inicio")
 
         /*setTimeout(() => {
             console.log("Ejecutando un setTimeout, esto se ejecuta una sóla vez"); 
@@ -89,7 +89,7 @@
             console.log("Fin");
         })();*/
 
-        function cuadardoCallback(value, callback) {
+        /*function cuadardoCallback(value, callback) {
             setTimeout(() => {
                 callback(value, value * value);
             }, 0 | Math.random()*1000);
@@ -109,7 +109,44 @@
 
                 });
             });
-        });
+        });*/
+        
+        function cuadradoPromise(value) {
+            if (typeof value !== "number") {
+                return Promise.reject(`Error, el valor ${value} ingresado no es un núemro`);
+            }
+
+
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve({
+                        value,
+                        result: value * value
+                    });
+                }, 0 | Math.random()*1000);
+            });
+        }
+
+        cuadradoPromise(0)
+        .then(obj => {
+            // console.log(obj);      
+            console.log(`Inicia Promise`);
+            console.log(`Promise: ${obj.value}, ${obj.result}`);
+            return cuadradoPromise(1);
+        })
+        .then(obj => {
+            // console.log(obj);      
+            console.log(`Inicia Promise`);
+            console.log(`Promise: ${obj.value}, ${obj.result}`);
+            return cuadradoPromise(2);
+        })
+        .then(obj => {
+            // console.log(obj);      
+            console.log(`Inicia Promise`);
+            console.log(`Promise: ${obj.value}, ${obj.result}`);
+            console.log(`Fin Promise`);
+        })        
+        .catch(err => console.error(err));
 
 
 
