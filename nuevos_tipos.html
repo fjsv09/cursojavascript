@@ -47,7 +47,7 @@
             console.log(persona[propiedad]);
         }
 
-        console.log(Object.getOwnPropertySymbols(persona));*/
+        console.log(Object.getOwnPropertySymbols(persona));
 
         //SET: Arreglo mejorado de javascript que acepta valores unicos
         const set = new Set([1, 2, 3, 3, 4, 5, true, false, true, {}, {}, "hola", "HOla"]);
@@ -86,7 +86,49 @@
         console.log(set.has(19));
 
         set2.clear();
-        console.log(set2);
+        console.log(set2);*/
+
+        let mapa = new Map();
+        mapa.set("nombre", "fernando");
+        mapa.set("apellido", "vilcherres");
+        mapa.set("edad", 22);
+
+        console.log(mapa);
+        console.log(mapa.size);
+        console.log(mapa.has("correo"));
+        console.log(mapa.has("nombre"));
+        console.log(mapa.get("nombre"));
+        mapa.set("nombre", "fernando jose");
+        console.log(mapa.get("nombre"));
+        mapa.delete("apellido");
+        console.log(mapa);
+
+        mapa.set(19, "diecinueve");
+        mapa.set(false, "falso");
+        mapa.set({}, {});
+        console.log(mapa);
+
+
+        for (const [key, value] of mapa) {
+            console.log(`Llave: ${key}, Valor: ${value}`)
+        }
+
+        const mapa2 = new Map([
+            ["nombre", "Jose"],
+            ["edad", 7],
+            ["animal", "perro"],
+            [null, "nulo"]
+        ]);
+        
+        console.log(mapa2);
+
+        const llavesMapa2 = [...mapa2.keys()];
+        const valoresMapa2 = [...mapa2.values()];
+        console.log(llavesMapa2);
+        console.log(valoresMapa2);
+
+
+
 
     </script>
 </body>
