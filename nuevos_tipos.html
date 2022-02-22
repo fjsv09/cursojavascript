@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nuevos Tipos de Datos en JAvaScript</title>
+    <title>Nuevos Tipos de Datos en JavaScript</title>
 </head>
 <body>
-    <h1>Nuevos Tipos de Datos en JAvaScript</h1>
+    <h1>Nuevos Tipos de Datos en JavaScript</h1>
 
     <script>
 
@@ -86,7 +86,7 @@
         console.log(set.has(19));
 
         set2.clear();
-        console.log(set2);*/
+        console.log(set2);
 
         let mapa = new Map();
         mapa.set("nombre", "fernando");
@@ -128,7 +128,71 @@
         console.log(valoresMapa2);
 
 
+        // WEAKSET: 
+        const ws = new WeakSet();
 
+        let valor1 = {"valor 1": 1};
+        let valor2 = {"valor 2": 2};
+        let valor3 = {"valor 3": 3};
+
+        ws.add(valor1);
+        ws.add(valor2);
+
+        console.log(ws);
+        console.log(ws.has(valor1));
+        console.log(ws.has(valor3));
+
+        ws.delete(valor2);
+        
+        console.log(ws);
+
+        ws.add(valor2);
+        ws.add(valor3);
+        console.log(ws);
+
+        setInterval(() => console.log(ws), 1000);
+
+        setTimeout(() => {
+            valor1 = null;
+            valor2 = null;
+            valor3 = null;
+        }, 500);
+
+        //WEAKMAPS
+        const wm = new WeakMap();
+
+        let llave1 = {};
+        let llave2 = {};
+        let llave3 = {};
+
+        wm.set(llave1, 1);
+        wm.set(llave2, 2);
+
+        
+        console.log(wm);
+        
+        console.log(wm.has(llave1));
+        console.log(wm.has(llave3));
+        
+        console.log(wm.get(llave1));
+        console.log(wm.get(llave2));
+        console.log(wm.get(llave3));
+
+        wm.delete(llave2);
+
+        wm.set(llave2, 2);
+        wm.set(llave3, 3);
+        console.log(wm);
+        
+        setInterval(() => console.log(wm), 1000);
+
+        setTimeout(() => {
+            llave1 = null;
+            llave2 = null;
+            llave3 = null;
+        }, 500);*/
+
+        
 
     </script>
 </body>
