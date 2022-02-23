@@ -11,6 +11,7 @@
 
     <script>
 
+        //***************************SYMBOLS***************************
         /*let id = Symbol("id");
         let id2 = Symbol("id2");
 
@@ -49,7 +50,7 @@
 
         console.log(Object.getOwnPropertySymbols(persona));
 
-        //SET: Arreglo mejorado de javascript que acepta valores unicos
+        //***************************SET: Arreglo mejorado de javascript que acepta valores unicos***************************
         const set = new Set([1, 2, 3, 3, 4, 5, true, false, true, {}, {}, "hola", "HOla"]);
         console.log(set);
         console.log(set.size);
@@ -87,6 +88,8 @@
 
         set2.clear();
         console.log(set2);
+
+        //***************************MAP***************************
 
         let mapa = new Map();
         mapa.set("nombre", "fernando");
@@ -128,7 +131,7 @@
         console.log(valoresMapa2);
 
 
-        // WEAKSET: 
+        // ***************************WEAKSET***************************
         const ws = new WeakSet();
 
         let valor1 = {"valor 1": 1};
@@ -158,7 +161,7 @@
             valor3 = null;
         }, 500);
 
-        //WEAKMAPS
+        //***************************WEAKMAPS***************************
         const wm = new WeakMap();
 
         let llave1 = {};
@@ -192,7 +195,30 @@
             llave3 = null;
         }, 500);*/
 
-        
+        // ***************************Iterables & Iterators***************************
+        // const iterable = new  Set([1, 2, 2, 3, 3, 4, 5]);
+        // const iterable = new  Map(["nombre", "Fernando"`}]);
+        // const iterable = [1, 2, 2, 3, 3, 4, 5];
+        const iterable = "Hola mundo";
+        const iterador = iterable[Symbol.iterator]();
+
+        console.log(iterable);
+        console.log(iterador);
+
+        console.log(iterador.next());
+        // console.log(iterador.next());
+        // console.log(iterador.next());
+        // console.log(iterador.next());
+        // console.log(iterador.next());
+        // console.log(iterador.next());
+
+        let next = iterador.next(); 
+
+        while (!next.done) {
+            console.log(next.value);
+            next = iterador.next();
+        }
+
 
     </script>
 </body>
