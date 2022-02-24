@@ -260,7 +260,7 @@
 
         for (const g of gen) {
             console.log(g);
-        }*/
+        }
 
         //********************************* PROXIES ********************************* 
         const persona = {
@@ -295,7 +295,39 @@
 
         console.log(fer);
 
-        console.log(persona);
+        console.log(persona);*/
+
+        //*************************** Propiedades Dinámicas de los objetos ***************
+        let aleatorio = Math.round(Math.random() * 100 + 5);
+        
+        const objUsuarios = {
+            propiedad: "valor",
+            [`id_${aleatorio}`]: "Valor Aleatorio"
+        };
+        
+        console.log(objUsuarios);
+
+        const usuarios = ["Fernando", "Maria", "Jose", "Pedro"];
+        usuarios.forEach((usuario, index) => objUsuarios[`id_${index}`] = usuario);
+
+        console.log(objUsuarios);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
