@@ -369,7 +369,44 @@
         let fer = new Persona("Fernando");
         fer();*/
 
+        //********************** THIS 2 - CALL, APPLY, BIND ************************
         
+        console.log(this);
+        this.lugar = "Contexto Global";
+
+        function saludar(saludo, aQuien) {
+            console.log(`${saludo} ${aQuien} desde el ${this.lugar}`);
+        }
+
+        saludar();
+
+        const obj = {
+            lugar: "Contexto Objeto"
+        }
+
+        saludar.call(obj, "Hola", "Fer");
+        saludar.call(null, "Hola", "Fer");
+        saludar.call(this, "Hola", "Fer");
+        saludar.apply(obj, ["Adios", "Jose"]);
+        saludar.apply(null, ["Adios", "Jose"]);
+        saludar.apply(this, ["Adios", "Jose"]);
+
+        this.nombre = "Windows";
+
+        const persona = {
+            nombre: "Fer",
+            saludar: function () {
+                console.log(`Hola ${this.nombre}`)
+            }
+        }
+
+        persona.saludar();
+
+        const otraPersona = {
+            saludar: persona.saludar.bind(this)
+        }
+
+        otraPersona.saludar();
 
     </script>
 </body>
