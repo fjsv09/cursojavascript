@@ -295,7 +295,7 @@
 
         console.log(fer);
 
-        console.log(persona);*/
+        console.log(persona);
 
         //*************************** Propiedades Dinámicas de los objetos ***************
         let aleatorio = Math.round(Math.random() * 100 + 5);
@@ -312,25 +312,64 @@
 
         console.log(objUsuarios);
 
+        //******************************* THIS *******************************
+        console.log(this);
+        console.log(window);
+        console.log(this === window);
 
+        this.nombre = "Conexto Global";
+        console.log(this.nombre, 1);
 
+        function imprimir() {
+            console.log(this.nombre, 2);
+        }
 
+        imprimir();
 
+        const obj = {
+            nombre: "Contexto Objeto 1",
+            imprimir: function () {
+                console.log(this.nombre, 3);
+            }
+        }
+        
+        obj.imprimir();
 
+        const obj2 = {
+            nombre: "Contexto Objeto 2",
+            imprimir
+        }
+        
+        obj2.imprimir();
 
+        const obj3 = {
+            nombre: "Contexto Objeto 3",
+            imprimir: () => {
+                console.log(this.nombre, 4);
+            }
+        }
+        
+        obj3.imprimir();
 
+        function Persona(nombre) {
+            const that = this;
+            // this.nombre = nombre;
+            that.nombre = nombre;
+            
+            // return console.log(this.nombre);
+            // return function () {
+            //     console.log(this.nombre, 5);
+            // }
+            // return () => console.log(this.nombre);
+            return function () {
+                console.log(that.nombre, 5);
+            }
+        }
 
+        let fer = new Persona("Fernando");
+        fer();*/
 
-
-
-
-
-
-
-
-
-
-
+        
 
     </script>
 </body>
