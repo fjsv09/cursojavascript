@@ -1,0 +1,7 @@
+{
+    "cadena":"Json",
+    "numero":"35",
+    "booleano":"true",
+    "arreglo":["correr","programar","cocinar"],
+    "objeto":{"twitter":"@fernando","email":"fer@gmail.com"},"nulo":null
+}
