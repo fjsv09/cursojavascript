@@ -180,7 +180,7 @@ card.classList.toggle("sepia");
 
 
 */
-
+/*
 const whatIsDOM = document.getElementById("que-es");
 
 let text = `
@@ -200,4 +200,32 @@ let text = `
 whatIsDOM.textContent = text;
 whatIsDOM.innerHTML = text;
 // whatIsDOM.outerHTML = text;
+*/
+
+/*
+
+
+
+
+
+
+*/
+const cards = document.querySelector(".cards");
+
+console.log(cards);
+console.log(cards.children);
+console.log(cards.childNodes);
+console.log(cards.children[2]);
+console.log(cards.parentElement);
+console.log(cards.firstElementChild);
+console.log(cards.lastElementChild);
+console.log(cards.previousElementSibling);
+console.log(cards.nextElementSibling);
+console.log(cards.closest("div"));
+console.log(cards.closest("body"));
+console.log(cards.children[3].closest("section"));
+
+
+
+
 
