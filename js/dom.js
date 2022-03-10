@@ -309,7 +309,7 @@ document.body.appendChild(ul3);*/
 
 
 */
-const cards = document.querySelector(".cards"),
+/*const cards = document.querySelector(".cards"),
 template = document.getElementById("template-card").content,
 fragment = document.createDocumentFragment(),
 cardContent = [
@@ -344,6 +344,63 @@ cardContent.forEach(el => {
     fragment.appendChild(clone);
 });
 
-cards.appendChild(fragment);
+cards.appendChild(fragment);*/
+/*
 
 
+
+
+*/
+/*const cards = document.querySelector(".cards"),
+newCard = document.createElement("figure"),
+cloneCards = cards.cloneNode(true);
+
+newCard.innerHTML = `
+    <img src="https://placeimg.com/200/200/any" alt="Any">
+    <figcaption>Any</figcaption>
+`;
+
+newCard.classList.add("card");
+
+// cards.replaceChild(newCard, cards.children[2]);
+// cards.insertBefore(newCard, cards.firstElementChild);
+// cards.removeChild(cards.lastElementChild);
+document.body.appendChild(cloneCards);*/
+/*
+
+
+
+
+*/
+/*
+insertAdjacent.
+insertAdjacentElement(position, el)
+insertAdjacentHTML(position, html)
+insertAdjacentText(position, text)
+Posiciones:
+beforebegin(hermano anterior)
+afterbegin(primer hijo)
+beforeend(ultimo hijo)
+afterend(hermano siguiente)
+*/
+const cards = document.querySelector(".cards"),
+newCard = document.createElement("figure");
+
+let contenCard = `
+    <img src="https://placeimg.com/200/200/any" alt="Any">
+    <figcaption></figcaption>
+`;
+newCard.classList.add("card");
+
+newCard.insertAdjacentHTML("beforeend", contenCard);
+newCard.querySelector("figcaption").insertAdjacentText("afterbegin", "Any");
+cards.insertAdjacentElement("afterbegin", newCard);
+
+// Agrega al inicio 
+// cards.prepend(newCard);
+// Agrega al final
+// cards.append(newCard);
+// Agrega como hermano anterior a la section cards
+// cards.before(newCard);
+// Agrega como hermano posterior a la section cards
+// cards.after(newCard);
