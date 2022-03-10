@@ -231,7 +231,7 @@ console.log(cards.children[3].closest("section"));*/
 
 
 */
-const figure = document.createElement("figure"),
+/*const figure = document.createElement("figure"),
 img = document.createElement("img"),
 figcaption = document.createElement("figcaption"),
 figcaptionText = document.createTextNode("Animals"),
@@ -303,4 +303,47 @@ meses.forEach(el => {
 
 document.write("<h3>Meses del Año</h3>");
 ul3.appendChild(fragmento);
-document.body.appendChild(ul3);
+document.body.appendChild(ul3);*/
+/*
+
+
+
+*/
+const cards = document.querySelector(".cards"),
+template = document.getElementById("template-card").content,
+fragment = document.createDocumentFragment(),
+cardContent = [
+    {
+        title: "Tecnología",
+        img: "https://placeimg.com/200/200/tech",
+    },
+    {
+        title: "Animales",
+        img: "https://placeimg.com/200/200/animals",
+    },
+    {
+        title: "Arquitectura",
+        img: "https://placeimg.com/200/200/arch",
+    },
+    {
+        title: "Gente",
+        img: "https://placeimg.com/200/200/people",
+    },
+    {
+        title: "Naturaleza",
+        img: "https://placeimg.com/200/200/nature",
+    },
+];
+
+cardContent.forEach(el => {
+    template.querySelector("img").setAttribute("src", el.img);
+    template.querySelector("img").setAttribute("alt", el.title);
+    template.querySelector("figcaption").textContent = el.title;
+
+    let clone = document.importNode(template, true);
+    fragment.appendChild(clone);
+});
+
+cards.appendChild(fragment);
+
+
