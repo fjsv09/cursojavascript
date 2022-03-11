@@ -383,7 +383,7 @@ afterbegin(primer hijo)
 beforeend(ultimo hijo)
 afterend(hermano siguiente)
 */
-const cards = document.querySelector(".cards"),
+/*const cards = document.querySelector(".cards"),
 newCard = document.createElement("figure");
 
 let contenCard = `
@@ -394,7 +394,7 @@ newCard.classList.add("card");
 
 newCard.insertAdjacentHTML("beforeend", contenCard);
 newCard.querySelector("figcaption").insertAdjacentText("afterbegin", "Any");
-cards.insertAdjacentElement("afterbegin", newCard);
+cards.insertAdjacentElement("afterbegin", newCard);*/
 
 // Agrega al inicio 
 // cards.prepend(newCard);
@@ -404,3 +404,32 @@ cards.insertAdjacentElement("afterbegin", newCard);
 // cards.before(newCard);
 // Agrega como hermano posterior a la section cards
 // cards.after(newCard);
+/*
+
+
+
+
+*/
+function holaMundo() {
+    alert("Hola Mundo");
+    console.log(event);
+}
+
+const eventoSemantico = document.getElementById("evento-semantico"),
+eventoMultiple = document.getElementById("evento-multiple");
+
+eventoSemantico.onclick = holaMundo;
+eventoSemantico.onclick = function (e) {
+    alert("Hola Mundo manejador de eventos semanticos");
+    console.log(e);
+    console.log(event);
+};
+
+eventoMultiple.addEventListener("click", holaMundo);
+eventoMultiple.addEventListener("click", (e) => {
+    alert("Hola Mundo manejador de eventos múltiples");
+    console.log(e);
+    console.log(e.type);
+    console.log(e.target);
+    console.log(event);
+});
