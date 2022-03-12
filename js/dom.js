@@ -410,7 +410,7 @@ cards.insertAdjacentElement("afterbegin", newCard);*/
 
 
 */
-function holaMundo() {
+/*function holaMundo() {
     alert("Hola Mundo");
     console.log(event);
 }
@@ -452,4 +452,30 @@ const removerDobleClick = (e) => {
     eventoRemover.disabled = true;
 }
 
-eventoRemover.addEventListener("dblclick", removerDobleClick);
+eventoRemover.addEventListener("dblclick", removerDobleClick);*/
+/*
+
+
+
+
+*/
+const $divEventos =document.querySelectorAll(".eventos-flujo div");
+
+function flujoEventos(e) {
+    console.log(`Hola te saluda ${this.className}, el click lo origino ${e.target.className}`);
+}
+
+console.log($divEventos);
+
+$divEventos.forEach(div => {
+    // FASE DE BURBUJA
+    // div.addEventListener("click", flujoEventos);
+    // div.addEventListener("click", flujoEventos, false);
+    // FASE DE CAPTURA
+    // div.addEventListener("click", flujoEventos, true);
+    div.addEventListener("click", flujoEventos, {
+        capture: false,
+        once: true,
+    });
+});
+
