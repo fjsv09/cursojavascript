@@ -459,23 +459,31 @@ eventoRemover.addEventListener("dblclick", removerDobleClick);*/
 
 
 */
-const $divEventos =document.querySelectorAll(".eventos-flujo div");
+const $divEventos = document.querySelectorAll(".eventos-flujo div"),
+$linkEventos = document.querySelector(".eventos-flujo a");
 
 function flujoEventos(e) {
     console.log(`Hola te saluda ${this.className}, el click lo origino ${e.target.className}`);
+    e.stopPropagation();
 }
 
 console.log($divEventos);
 
 $divEventos.forEach(div => {
     // FASE DE BURBUJA
-    // div.addEventListener("click", flujoEventos);
+    div.addEventListener("click", flujoEventos);
     // div.addEventListener("click", flujoEventos, false);
     // FASE DE CAPTURA
     // div.addEventListener("click", flujoEventos, true);
-    div.addEventListener("click", flujoEventos, {
-        capture: false,
-        once: true,
-    });
+    // div.addEventListener("click", flujoEventos, {
+    //     capture: false,
+    //     once: true,
+    // });
 });
 
+$linkEventos.addEventListener("click", (e) => {
+    alert("Fernando");
+    // Detiene el comportamiento por defecto del formulario
+    e.preventDefault();
+    e.stopPropagation();
+});
