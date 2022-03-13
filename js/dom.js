@@ -459,17 +459,29 @@ eventoRemover.addEventListener("dblclick", removerDobleClick);*/
 
 
 */
-const $divEventos = document.querySelectorAll(".eventos-flujo div"),
-$linkEventos = document.querySelector(".eventos-flujo a");
+// const $divEventos = document.querySelectorAll(".eventos-flujo div"),
+// $linkEventos = document.querySelector(".eventos-flujo a");
 
 function flujoEventos(e) {
-    console.log(`Hola te saluda ${this.className}, el click lo origino ${e.target.className}`);
-    e.stopPropagation();
+    console.log(`Hola te saluda ${this}, el click lo origino ${e.target.className}`);
+    // e.stopPropagation();
 }
 
-console.log($divEventos);
+document.addEventListener("click", (e) => {
+    console.log("Click en ", e.target);
 
-$divEventos.forEach(div => {
+    if (e.target.matches(".eventos-flujo div")) {
+        flujoEventos(e);
+    }
+
+    if (e.target.matches(".eventos-flujo a")) {
+        alert("Fernando");
+        e.preventDefault();
+    }
+
+});
+
+/*$divEventos.forEach(div => {
     // FASE DE BURBUJA
     div.addEventListener("click", flujoEventos);
     // div.addEventListener("click", flujoEventos, false);
@@ -486,4 +498,4 @@ $linkEventos.addEventListener("click", (e) => {
     // Detiene el comportamiento por defecto del formulario
     e.preventDefault();
     e.stopPropagation();
-});
+});*/
