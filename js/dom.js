@@ -462,7 +462,7 @@ eventoRemover.addEventListener("dblclick", removerDobleClick);*/
 // const $divEventos = document.querySelectorAll(".eventos-flujo div"),
 // $linkEventos = document.querySelector(".eventos-flujo a");
 
-function flujoEventos(e) {
+/*function flujoEventos(e) {
     console.log(`Hola te saluda ${this}, el click lo origino ${e.target.className}`);
     // e.stopPropagation();
 }
@@ -479,7 +479,7 @@ document.addEventListener("click", (e) => {
         e.preventDefault();
     }
 
-});
+});*/
 
 /*$divEventos.forEach(div => {
     // FASE DE BURBUJA
@@ -499,3 +499,36 @@ $linkEventos.addEventListener("click", (e) => {
     e.preventDefault();
     e.stopPropagation();
 });*/
+
+window.addEventListener("resize", e => {
+    console.clear();
+    console.log("********** Evento Risize *********");
+    console.log(window.innerWidth);
+    console.log(window.innerHeight);
+    console.log(window.outerWidth);
+    console.log(window.outerHeight);
+    console.log(e);
+});
+
+window.addEventListener("scroll", e => {
+    console.clear();
+    console.log("********** Evento Scroll **********");
+    console.log(window.scrollX);
+    console.log(window.scrollY);
+    console.log(e);
+});
+
+window.addEventListener("load", e => {
+    // console.clear();
+    console.log("********** Evento Load **********");
+    console.log(window.screenX);
+    console.log(window.screenY);
+    console.log(e);
+});
+
+document.addEventListener("DOMContentLoaded", e => {
+    console.log("********** Evento DOMContentLoaded **********");
+    console.log(window.screenX);
+    console.log(window.screenY);
+    console.log(e);
+});
