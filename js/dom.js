@@ -536,7 +536,7 @@ document.addEventListener("DOMContentLoaded", e => {
 // window.alert("Alerta");
 // window.confirm("Confirmación");
 // window.prompt("Aviso");
-const $btnAbrir = document.getElementById("abrir-ventana"),
+/*const $btnAbrir = document.getElementById("abrir-ventana"),
 $btnCerrar = document.getElementById("cerrar-ventana"),
 $btnImprimir = document.getElementById("imprimir-ventana");
 
@@ -553,4 +553,50 @@ $btnCerrar.addEventListener("click", e => {
 
 $btnImprimir.addEventListener("click", e => {
     window.print();
-});
+});*/
+
+/*console.log("*************** Objeto URL (locaction) ***************");
+console.log(location);
+//La ruta de la cual se origina: http://127.0.0.1:5500
+console.log(location.origin);
+//El protocolo: http:
+console.log(location.protocol);
+//Host: 127.0.0.1:5500
+console.log(location.host);
+//Hostname: 127.0.0.1
+console.log(location.hostname);
+//Puerto: 5500
+console.log(location.port);
+Href: http://127.0.0.1:5500/60_dom.html
+console.log(location.href);
+//Para rutas amigables url/contactos
+console.log(location.hash);
+//Variables: ?nombre=jose&edad=22
+console.log(location.search);
+//Archivo consultado: /60_dom.html
+console.log(location.pathname);
+// location.reload()*/
+
+/*console.log("*************** Objeto Historia (history) ***************");
+console.log(history);
+console.log(history.length);
+//Cuantas pagínas quieres ir hacia atrás 
+// console.log(history.back(3));
+//Cuantas pagínas quieres ir hacia adelante 
+// console.log(history.forward(3));
+//Mismo manejo que el back pero con signo - (atrás) y que forward con signo + (adelante)
+// console.log(history.go(-1));*/
+
+console.log("*************** Objeto Navegador (navigator) ***************");
+console.log(navigator);
+console.log(navigator.connection);
+console.log(navigator.geolocation);
+console.log(navigator.mediaDevices);
+console.log(navigator.mimeTypes);
+console.log(navigator.onLine);
+console.log(navigator.serviceWorker);
+console.log(navigator.storage);
+console.log(navigator.usb);
+console.log(navigator.userAgent);
+
+
