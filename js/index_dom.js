@@ -18,10 +18,11 @@ d.addEventListener("DOMContentLoaded", (e) => {
         "Feliz cumpleaños FERNANDO, CUMPLISTE TU OBJETIVO!!!"
         );
     scrollTopButton(".scroll-top-btn");
-    darkTheme(".dark-theme-btn", "dark-mode");
 })
 
 d.addEventListener("keydown", (e) => {
     shortcts(e);
     moveBall(e, ".ball", ".stage");
 });
+
+darkTheme(".dark-theme-btn", "dark-mode");
