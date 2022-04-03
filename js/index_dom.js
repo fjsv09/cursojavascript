@@ -1,3 +1,4 @@
+import networkStatus from "./deteccion_red.js";
 import scrollTopButton from "./dom/boton_scroll.js";
 import countdown from "./dom/cuenta_regresiva.js";
 import userDeviceInfo from "./dom/deteccion_dispositivos.js";
@@ -43,3 +44,4 @@ d.addEventListener("keydown", (e) => {
 });
 
 darkTheme(".dark-theme-btn", "dark-mode");
+networkStatus();
