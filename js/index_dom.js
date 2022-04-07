@@ -3,6 +3,7 @@ import scrollTopButton from "./dom/boton_scroll.js";
 import countdown from "./dom/cuenta_regresiva.js";
 import userDeviceInfo from "./dom/deteccion_dispositivos.js";
 import webCam from "./dom/deteccion_webcam.js";
+import searchFilters from "./dom/filtro-busquedas.js";
 import getGeoLocation from "./dom/geocalizacion.js";
 import hamburgerMenu from "./dom/menu_hamburguesa.js";
 import responsiveMedia from "./dom/objeto_responsive.js";
@@ -40,6 +41,7 @@ d.addEventListener("DOMContentLoaded", (e) => {
     userDeviceInfo("user-device");
     webCam("webcam");
     getGeoLocation("geolocation");
+    searchFilters(".card-filter", ".card");
 });
 
 d.addEventListener("keydown", (e) => {
