@@ -9,6 +9,7 @@ import hamburgerMenu from "./dom/menu_hamburguesa.js";
 import responsiveMedia from "./dom/objeto_responsive.js";
 import responsiveTester from "./dom/prueba_responsive.js";
 import { digitalClock, alarm } from "./dom/reloj.js";
+import draw from "./dom/sorteo.js";
 import { moveBall, shortcts } from "./dom/teclado.js";
 import darkTheme from "./dom/tema_oscuro.js";
 
@@ -42,6 +43,7 @@ d.addEventListener("DOMContentLoaded", (e) => {
     webCam("webcam");
     getGeoLocation("geolocation");
     searchFilters(".card-filter", ".card");
+    draw("#winner-btn", ".player");
 });
 
 d.addEventListener("keydown", (e) => {
