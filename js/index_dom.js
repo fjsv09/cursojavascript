@@ -1,5 +1,6 @@
 import networkStatus from "./deteccion_red.js";
 import scrollTopButton from "./dom/boton_scroll.js";
+import slider from "./dom/carrusel.js";
 import countdown from "./dom/cuenta_regresiva.js";
 import userDeviceInfo from "./dom/deteccion_dispositivos.js";
 import webCam from "./dom/deteccion_webcam.js";
@@ -44,6 +45,7 @@ d.addEventListener("DOMContentLoaded", (e) => {
     getGeoLocation("geolocation");
     searchFilters(".card-filter", ".card");
     draw("#winner-btn", ".player");
+    slider();
 });
 
 d.addEventListener("keydown", (e) => {

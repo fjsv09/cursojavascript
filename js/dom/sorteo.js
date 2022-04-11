@@ -32,4 +32,4 @@ const getWinnerComment = (selector) => {
 }
 
 //Comentarios de Youtube: obtner uno aleatorio
-getWinnerComment("ytd-comment-renderer #author-text span")
+// getWinnerComment("ytd-comment-renderer #author-text span")
