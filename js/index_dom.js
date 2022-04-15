@@ -7,6 +7,7 @@ import webCam from "./dom/deteccion_webcam.js";
 import searchFilters from "./dom/filtro-busquedas.js";
 import getGeoLocation from "./dom/geocalizacion.js";
 import hamburgerMenu from "./dom/menu_hamburguesa.js";
+import speechReader from "./dom/narrador.js";
 import responsiveMedia from "./dom/objeto_responsive.js";
 import responsiveTester from "./dom/prueba_responsive.js";
 import { digitalClock, alarm } from "./dom/reloj.js";
@@ -61,3 +62,4 @@ d.addEventListener("keydown", (e) => {
 
 darkTheme(".dark-theme-btn", "dark-mode");
 networkStatus();
+speechReader();
