@@ -1,3 +1,4 @@
+// PRIMERA FORMA DE TRABAJAR CON JSON XMLHttpRequest
 (() => {
     // USO DE XMLHttpRequest
     // PRIMER PASO: Crear una instancia de XMLHttpRequest()
@@ -11,13 +12,13 @@
         
         if (xhr.readyState !== 4) return;
         
-        console.log(xhr);        
+        // console.log(xhr);        
         
         if (xhr.status >= 200 && xhr.status < 300) {
-            console.log("ÉXITO");        
+            // console.log("ÉXITO");        
             // console.log(xhr.responseText);        
             let json = JSON.parse(xhr.responseText)
-            console.log(json);
+            // console.log(json);
 
             json.forEach(el => {
                 const $li = document.createElement("li");
@@ -33,7 +34,7 @@
             $xhr.innerHTML = `Error ${xhr.status}: ${message}`;
         }
 
-        console.log("Este mensaje cargará de cualquier forma");
+        // console.log("Este mensaje cargará de cualquier forma");
         
     });
     
@@ -46,4 +47,33 @@
     // CUARTO PASO: Enviar la petición
     xhr.send();
     
+})();
+
+// SEGUNDA FORMA DE TRABAJAR CON JSON FETCH
+(() => {
+
+    const $fetch = document.getElementById("fetch"),
+    $fragment = document.createDocumentFragment();
+
+    fetch("https://jsonplaceholder.typicode.com/users")
+    .then( res => res.ok ? res.json() : Promise.reject(res))
+    .then(json => {
+        // console.log(json);
+        json.forEach(el => {
+            const $li = document.createElement("li");
+            $li.innerHTML = `${el.name} -- ${el.email} -- ${el.phone}`
+            $fragment.appendChild($li);
+        });
+            
+        $fetch.appendChild($fragment);
+    })
+    .catch(err => {
+        // console.log("Estamos en el catch", err);
+        let message = err.statusText || "Ocurrió un error"
+        $fetch.innerHTML = `Error ${err.status}: ${message}`;
+    })
+    .finally(() => 
+    console.log("Esto se ejecutara independientemente del resultado de la promesa Fetch")
+    );
+
 })();
