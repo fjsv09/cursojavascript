@@ -49,12 +49,15 @@
     
 })();
 
+
+
 // SEGUNDA FORMA DE TRABAJAR CON JSON FETCH
 (() => {
 
     const $fetch = document.getElementById("fetch"),
     $fragment = document.createDocumentFragment();
 
+    // fetch("assets/users.json")
     fetch("https://jsonplaceholder.typicode.com/users")
     .then( res => res.ok ? res.json() : Promise.reject(res))
     .then(json => {
@@ -72,8 +75,46 @@
         let message = err.statusText || "Ocurrió un error"
         $fetch.innerHTML = `Error ${err.status}: ${message}`;
     })
-    .finally(() => 
-    console.log("Esto se ejecutara independientemente del resultado de la promesa Fetch")
+    .finally(() => {}
+    // console.log("Esto se ejecutara independientemente del resultado de la promesa Fetch")
     );
+
+})();
+
+
+
+(() => {
+    const $fetchAsync = document.getElementById("fetch-async"),
+    $fragment = document.createDocumentFragment();
+
+    async function getData() {
+        try {
+            // AWAIT: Hace que espere que se termine de ejecutar para continuar con la siguiente línea. 
+            let res = await fetch("https://jsonplaceholder.typicode.com/uses"),
+            json = await res.json();
+
+            if (!res.ok) throw {status: res.status, statusText: res.statusText}
+
+            json.forEach(el => {
+                const $li = document.createElement("li");
+                $li.innerHTML = `${el.name} -- ${el.email} -- ${el.phone}`
+                $fragment.appendChild($li);
+            });
+                
+            $fetchAsync.appendChild($fragment)
+
+            // console.log(res, json);
+
+        } catch (err) {
+            console.log("ERROR");      
+            let message = err.statusText || "Ocurrió un error"
+            $fetchAsync.innerHTML = `Error ${err.status}: ${message}`;          
+        } finally {
+
+        }
+
+    }
+
+    getData();
 
 })();
