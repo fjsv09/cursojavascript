@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,26 +9,28 @@
     <style>
         :root {
             --yellow-color: #F7DF1E;
-            --dark-color: #222; 
+            --dark-color: #222;
         }
+
         .cards {
             border: thin solid var(--dark-color);
             padding: #222;
         }
+
         .card {
             display: inline-block;
             background-color: var(--dark-color);
             color: var(--yellow-color);
         }
-        
+
         .card figcaption {
             padding: 1rem
         }
-        
+
         .rotate-45 {
             transform: rotate(45deg);
         }
-        
+
         .rotate-135 {
             transform: rotate(135deg);
         }
@@ -35,7 +38,7 @@
         opacity-80 {
             opacity: 8;
         }
-        
+
         .sepia {
             filter: sepia(1);
         }
@@ -49,14 +52,17 @@
         .uno {
             background-color: yellow;
         }
+
         .dos {
             background-color: gold;
         }
+
         .tres {
             background-color: lightyellow;
         }
     </style>
 </head>
+
 <body>
     <h1>WEB APIS</h1>
     <h2> DOM: Document Object Model</h2>
@@ -81,7 +87,9 @@
     <br>
     <h3>Mnaejo del DOM</h3>
     <p id="que-es">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. A commodi voluptatem error consectetur assumenda? Nostrum non iure sequi eaque, ipsum harum vero voluptatum similique enim maiores veritatis, praesentium, reprehenderit iste.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. A commodi voluptatem error consectetur assumenda?
+        Nostrum non iure sequi eaque, ipsum harum vero voluptatum similique enim maiores veritatis, praesentium,
+        reprehenderit iste.
     </p>
     <nav id="menu">
         <ul>
@@ -93,7 +101,8 @@
         </ul>
     </nav>
     <input type="text" name="nombre" placeholder="Nombre">
-    <a class="link-dom" href="60_dom.html" style="background-color: #F7DF1E; color: #222;" data-id="1" data-description="Document Objetc Model">DOM</a>
+    <a class="link-dom" href="60_dom.html" style="background-color: #F7DF1E; color: #222;" data-id="1"
+        data-description="Document Objetc Model">DOM</a>
     <section class="cards">
         <figure class="card">
             <img src="https://placeimg.com/200/200/tech" alt="tech">
@@ -120,7 +129,7 @@
     <template id="template-card">
         <figure class="card">
             <img>
-                <figcaption></figcaption>
+            <figcaption></figcaption>
             </img>
         </figure>
     </template>
@@ -156,8 +165,9 @@
     <button id="cerrar-ventana">Cerrar Ventana</button>
     <br><br>
     <button id="imprimir-ventana"> Imprimir Ventana</button>
-    
+
     <br><br><br><br><br><br>
     <script src="js/dom.js"></script>
 </body>
+
 </html>
