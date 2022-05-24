@@ -1,5 +1,5 @@
 <?php
-// echo "hola"; 
+// php -S localhost:3000
 if (isset($_FILES["file"])) {
     $name = $_FILES["file"]["name"];
     $file = $_FILES["file"]["tmp_name"];
